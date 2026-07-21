@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ashley Luciano | Legacy Realty &amp; Associates | Ocala &amp; Marion County Real Estate</title>
+<meta name="description" content="Ashley Luciano with Legacy Realty & Associates — real estate, done with care. Buying, selling, or curious what your home is worth in Ocala & Marion County? Start here.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Archivo:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1e2a4a;         /* headings & dark sections */
+    --navy-deep:#141d35;    /* deepest navy */
+    --plum:#532b88;         /* purple accent — buttons, links */
+    --plum-deep:#3f1f68;
+    --paper:#ffffff;        /* white base */
+    --ice:#f5f6fa;          /* soft card background */
+    --slate:#8b93a9;        /* muted blue-gray */
+    --ink:#1a1f2e;
+    --display:'Fraunces', Georgia, serif;
+    --body:'Archivo', Arial, sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.6;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+
+  /* ============ TOP BAR ============ */
+  .topbar{background:var(--plum-deep);color:#fff;font-size:.8rem;letter-spacing:.06em;}
+  .topbar-inner{max-width:1200px;margin:0 auto;padding:.5rem 1.5rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+  .topbar a{text-decoration:none;font-weight:600;}
+
+  /* ============ NAV ============ */
+  header.site{background:var(--paper);border-bottom:1px solid rgba(30,42,74,.12);position:sticky;top:0;z-index:50;}
+  .nav-inner{max-width:1200px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;min-height:82px;}
+  .logo{text-decoration:none;line-height:1.15;}
+  .logo .name{font-family:var(--display);font-weight:500;font-size:1.5rem;color:var(--navy);}
+  .logo .sub{font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:var(--ink);opacity:.65;}
+  nav.main ul{list-style:none;display:flex;gap:.25rem;}
+  nav.main > ul > li{position:relative;}
+  nav.main > ul > li > a{display:block;padding:1.9rem .9rem;text-decoration:none;font-weight:600;font-size:.85rem;letter-spacing:.06em;text-transform:uppercase;color:var(--navy);}
+  nav.main > ul > li > a:hover{color:var(--plum);}
+  .dropdown{position:absolute;top:100%;left:0;background:#fff;min-width:235px;border-top:3px solid var(--plum);box-shadow:0 14px 30px rgba(20,29,53,.14);display:none;flex-direction:column;}
+  nav.main li:hover .dropdown, nav.main li:focus-within .dropdown{display:flex;}
+  .dropdown a{padding:.7rem 1.1rem;text-decoration:none;font-size:.85rem;border-bottom:1px solid rgba(30,42,74,.08);}
+  .dropdown a:hover{background:var(--ice);color:var(--plum);}
+  .nav-phone{font-family:var(--display);font-size:1.05rem;color:var(--navy);text-decoration:none;white-space:nowrap;font-weight:600;}
+  .nav-toggle{display:none;}
+  .nav-toggle-label{display:none;cursor:pointer;font-size:1.6rem;color:var(--navy);padding:.5rem;}
+
+  /* ============ HERO ============ */
+  .hero{background:var(--paper);text-align:center;padding:5.5rem 1.5rem 5rem;position:relative;}
+  .hero .eyebrow-line{display:inline-flex;align-items:center;gap:.75rem;font-size:.78rem;letter-spacing:.3em;text-transform:uppercase;color:var(--plum);font-weight:600;margin-bottom:1.5rem;}
+  .hero .eyebrow-line::before{content:"";width:36px;height:2px;background:var(--plum);}
+  .hero h1{font-family:var(--display);font-weight:400;font-size:clamp(2.4rem,5.2vw,4rem);color:var(--navy);line-height:1.12;max-width:760px;margin:0 auto 1.5rem;}
+  .hero h1 em{font-style:italic;}
+  .hero .intro{max-width:560px;margin:0 auto 2.25rem;font-size:1.05rem;color:var(--ink);opacity:.85;}
+  .hero .cta-row{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem;}
+
+  .btn{display:inline-block;background:var(--plum);color:#fff;text-decoration:none;border:none;padding:.9rem 2rem;border-radius:6px;font-family:var(--body);font-weight:600;font-size:.9rem;letter-spacing:.04em;cursor:pointer;transition:background .2s;}
+  .btn:hover{background:var(--navy);}
+  .btn.ghost{background:transparent;border:1.5px solid var(--navy);color:var(--navy);}
+  .btn.ghost:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+
+  /* search bar */
+  .search-card{max-width:960px;margin:0 auto;background:#fff;border:1px solid rgba(30,42,74,.14);border-radius:8px;padding:1.25rem;display:grid;grid-template-columns:2.4fr 1fr 1fr .8fr .8fr auto;gap:.75rem;box-shadow:0 18px 40px rgba(20,29,53,.1);}
+  .search-card input,.search-card select{font-family:var(--body);font-size:.9rem;padding:.8rem .9rem;border:1px solid rgba(30,42,74,.22);border-radius:5px;background:#fff;color:var(--ink);width:100%;}
+  .search-card button{white-space:nowrap;}
+
+  /* ============ SECTIONS ============ */
+  section{padding:4.5rem 1.5rem;}
+  .wrap{max-width:1200px;margin:0 auto;}
+  .eyebrow{font-size:.75rem;letter-spacing:.3em;text-transform:uppercase;color:var(--plum);font-weight:600;text-align:center;}
+  h2.sec{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);text-align:center;color:var(--navy);margin:.4rem 0 2.5rem;}
+
+  /* listings */
+  .listings{background:var(--ice);}
+  .listings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;}
+  .listing{background:#fff;border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(20,29,53,.07);display:flex;flex-direction:column;transition:transform .2s, box-shadow .2s;}
+  .listing:hover{transform:translateY(-4px);box-shadow:0 16px 34px rgba(20,29,53,.13);}
+  .listing .photo{height:200px;background:linear-gradient(135deg,#c7cede,var(--navy));display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;position:relative;}
+  .listing .price{position:absolute;bottom:.75rem;left:.75rem;background:var(--navy-deep);color:#fff;font-family:var(--display);font-size:1.05rem;padding:.3rem .8rem;border-radius:4px;letter-spacing:.02em;}
+  .listing .body{padding:1.25rem 1.25rem 1.4rem;display:flex;flex-direction:column;gap:.5rem;flex:1;}
+  .listing h3{font-family:var(--display);font-weight:500;font-size:1.15rem;color:var(--navy);line-height:1.3;}
+  .listing .addr{font-size:.85rem;opacity:.7;}
+  .listing .stats{display:flex;gap:1rem;font-size:.8rem;letter-spacing:.05em;text-transform:uppercase;color:var(--plum);font-weight:600;margin-top:auto;padding-top:.75rem;border-top:1px solid rgba(30,42,74,.1);}
+  .center{text-align:center;margin-top:2.5rem;}
+
+  /* home worth band */
+  .worth-band{background:linear-gradient(135deg,var(--plum-deep),var(--navy-deep));color:#fff;text-align:center;}
+  .worth-band h2{font-family:var(--display);font-weight:400;font-size:clamp(1.7rem,3vw,2.4rem);margin-bottom:1rem;}
+  .worth-band h2 em{font-style:italic;}
+  .worth-band p{max-width:560px;margin:0 auto 2rem;opacity:.92;}
+  .worth-band .btn{background:#fff;color:var(--plum-deep);}
+  .worth-band .btn:hover{background:var(--ice);}
+
+  /* communities */
+  .communities p.lead{max-width:760px;margin:0 auto 2.5rem;text-align:center;font-size:1.02rem;opacity:.88;}
+  .comm-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.25rem;}
+  .comm-card{position:relative;height:190px;border-radius:8px;overflow:hidden;display:flex;align-items:flex-end;text-decoration:none;background:linear-gradient(160deg,#aeb8cf,var(--navy));}
+  .comm-card span{width:100%;padding:1rem 1.1rem;background:linear-gradient(transparent,rgba(20,29,53,.8));color:#fff;font-family:var(--display);font-size:1.15rem;letter-spacing:.02em;}
+  .comm-card:hover span{text-decoration:underline;}
+
+  /* about */
+  .about{background:var(--ice);}
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:3rem;align-items:center;}
+  .about-photo{background:linear-gradient(150deg,#c7cede,var(--navy));border-radius:8px;min-height:440px;display:flex;align-items:center;justify-content:center;color:#fff;font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;border:6px solid #fff;box-shadow:0 14px 34px rgba(20,29,53,.12);}
+  .about-copy .eyebrow{text-align:left;}
+  .about-copy h2{font-family:var(--display);font-weight:400;font-size:clamp(1.6rem,2.8vw,2.2rem);color:var(--navy);margin:.4rem 0 1.2rem;}
+  .about-copy h2 em{font-style:italic;}
+  .about-copy p{margin-bottom:1.1rem;}
+  .about-copy .btn{margin-top:.5rem;}
+
+  /* testimonials */
+  .quote-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem;}
+  .quote{background:#fff;border:1px solid rgba(30,42,74,.1);border-radius:8px;padding:1.75rem;border-top:3px solid var(--plum);display:flex;flex-direction:column;gap:1rem;box-shadow:0 8px 24px rgba(20,29,53,.05);}
+  .stars{color:var(--plum);letter-spacing:.15em;font-size:.9rem;}
+  .quote p{font-size:.95rem;font-style:italic;font-family:var(--display);line-height:1.55;color:var(--navy);}
+  .quote cite{font-style:normal;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;color:var(--plum);font-weight:600;}
+
+  /* footer */
+  footer{background:var(--navy-deep);color:#eef1f7;padding:4rem 1.5rem 2rem;}
+  .foot-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:2.5rem;}
+  footer h4{font-family:var(--display);font-weight:500;font-size:1.1rem;color:#fff;margin-bottom:1rem;}
+  footer ul{list-style:none;}
+  footer li{margin-bottom:.5rem;font-size:.9rem;}
+  footer a{text-decoration:none;opacity:.85;}
+  footer a:hover{opacity:1;text-decoration:underline;}
+  .foot-brand p{font-size:.9rem;opacity:.8;margin-top:.75rem;max-width:320px;}
+  .newsletter input{width:100%;padding:.75rem .9rem;border:1px solid rgba(238,241,247,.3);background:transparent;color:#fff;border-radius:5px;margin-bottom:.6rem;font-family:var(--body);}
+  .newsletter input::placeholder{color:rgba(238,241,247,.55);}
+  .newsletter button{width:100%;background:var(--plum);color:#fff;border:none;padding:.8rem;border-radius:5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:.8rem;cursor:pointer;}
+  .newsletter button:hover{background:#6a3aa8;}
+  .foot-legal{max-width:1200px;margin:3rem auto 0;padding-top:1.5rem;border-top:1px solid rgba(238,241,247,.15);font-size:.78rem;opacity:.6;text-align:center;}
+
+  /* ============ RESPONSIVE ============ */
+  @media (max-width: 980px){
+    .search-card{grid-template-columns:1fr 1fr;}
+    .search-card input[type=text]{grid-column:1/-1;}
+    .search-card button{grid-column:1/-1;}
+    .about-grid{grid-template-columns:1fr;}
+    .foot-grid{grid-template-columns:1fr 1fr;}
+    nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:var(--paper);border-bottom:1px solid rgba(30,42,74,.12);}
+    nav.main ul{flex-direction:column;gap:0;}
+    nav.main > ul > li > a{padding:1rem 1.5rem;border-bottom:1px solid rgba(30,42,74,.08);}
+    .dropdown{position:static;display:none;box-shadow:none;border-top:none;background:var(--ice);}
+    nav.main li:hover .dropdown{display:flex;}
+    .nav-toggle-label{display:block;}
+    .nav-toggle:checked ~ nav.main{display:block;}
+  }
+  @media (max-width: 560px){
+    .foot-grid{grid-template-columns:1fr;}
+    .hero{padding:4rem 1rem 3.5rem;}
+  }
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none!important;animation:none!important;}
+    html{scroll-behavior:auto;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ TOP BAR ============ -->
+<div class="topbar">
+  <div class="topbar-inner">
+    <span>Serving Ocala &amp; Marion County, FL</span>
+    <a href="tel:3524846637">(352) 484-6637</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="site">
+  <div class="nav-inner">
+    <a class="logo" href="#">
+      <div class="name">Ashley Luciano</div>
+      <div class="sub">Legacy Realty &amp; Associates</div>
+    </a>
+    <input type="checkbox" id="menu" class="nav-toggle">
+    <label for="menu" class="nav-toggle-label" aria-label="Open menu">&#9776;</label>
+    <nav class="main" aria-label="Main">
+      <ul>
+        <li><a href="#listings">Buy</a>
+          <div class="dropdown">
+            <a href="#">Active Listings</a>
+            <a href="#">Homes Under $300K</a>
+            <a href="#">$300K &ndash; $500K</a>
+            <a href="#">$500K +</a>
+            <a href="#">Farms, Land &amp; Acreage</a>
+          </div>
+        </li>
+        <li><a href="#worth">Sell</a>
+          <div class="dropdown">
+            <a href="#worth">What's My Home Worth?</a>
+            <a href="#">The Selling Process</a>
+            <a href="#">Preparing Your Home</a>
+          </div>
+        </li>
+        <li><a href="#communities">Life in Ocala</a>
+          <div class="dropdown">
+            <a href="#">Ocala Communities</a>
+            <a href="#">Neighborhood Guides</a>
+            <a href="#">Relocation Resources</a>
+          </div>
+        </li>
+        <li><a href="#about">About Ashley</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="nav-phone" href="tel:3524846637">(352) 484-6637</a>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<div class="hero">
+  <div class="eyebrow-line">Ocala &amp; Marion County, FL</div>
+  <h1>Real estate,<br>done with <em>care.</em></h1>
+  <p class="intro">I'm Ashley Luciano with Legacy Realty &amp; Associates. Whether you're buying, selling, or just curious what your home is worth, I'll walk you through it clearly, start to finish.</p>
+  <div class="cta-row">
+    <a class="btn" href="#worth">What's my home worth?</a>
+    <a class="btn ghost" href="#listings">Browse Active Listings</a>
+  </div>
+
+  <form class="search-card" action="#" method="get">
+    <input type="text" name="q" placeholder="City, ZIP, address or MLS #" aria-label="Search location">
+    <select aria-label="Minimum price"><option>Price Min</option><option>$150K</option><option>$250K</option><option>$400K</option><option>$600K</option></select>
+    <select aria-label="Maximum price"><option>Price Max</option><option>$300K</option><option>$500K</option><option>$750K</option><option>$1M+</option></select>
+    <select aria-label="Bedrooms"><option>Beds</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option><option>5+</option></select>
+    <select aria-label="Bathrooms"><option>Baths</option><option>1+</option><option>2+</option><option>3+</option><option>4+</option></select>
+    <button type="submit" class="btn">Search</button>
+  </form>
+</div>
+
+<!-- ============ FEATURED LISTINGS ============ -->
+<section id="listings" class="listings">
+  <div class="wrap">
+    <div class="eyebrow">Ocala &amp; Marion County</div>
+    <h2 class="sec">Active Listings</h2>
+    <div class="listings-grid">
+      <article class="listing">
+        <div class="photo"><span>Listing photo</span><span class="price">$389,000</span></div>
+        <div class="body">
+          <h3>Move-In-Ready Pool Home in SE Ocala</h3>
+          <div class="addr">SE Ocala, Florida 34471</div>
+          <div class="stats"><span>3 BD</span><span>2 BA</span><span>1,940 SF</span></div>
+        </div>
+      </article>
+      <article class="listing">
+        <div class="photo"><span>Listing photo</span><span class="price">$465,000</span></div>
+        <div class="body">
+          <h3>Newer Build on a Quiet Cul-de-Sac</h3>
+          <div class="addr">Ocala, Florida 34476</div>
+          <div class="stats"><span>4 BD</span><span>3 BA</span><span>2,400 SF</span></div>
+        </div>
+      </article>
+      <article class="listing">
+        <div class="photo"><span>Listing photo</span><span class="price">$279,000</span></div>
+        <div class="body">
+          <h3>Updated Villa in a 55+ Community</h3>
+          <div class="addr">Ocala, Florida 34481</div>
+          <div class="stats"><span>2 BD</span><span>2 BA</span><span>1,480 SF</span></div>
+        </div>
+      </article>
+      <article class="listing">
+        <div class="photo"><span>Listing photo</span><span class="price">$549,000</span></div>
+        <div class="body">
+          <h3>5&plusmn; Acres with Room for Horses</h3>
+          <div class="addr">Marion County, Florida</div>
+          <div class="stats"><span>3 BD</span><span>2 BA</span><span>5 AC</span></div>
+        </div>
+      </article>
+    </div>
+    <div class="center"><a class="btn ghost" href="#">View All Listings</a></div>
+  </div>
+</section>
+
+<!-- ============ HOME WORTH BAND ============ -->
+<section class="worth-band" id="worth">
+  <div class="wrap">
+    <h2>Curious what your home is <em>worth?</em></h2>
+    <p>Get a clear, honest picture of your home's value in today's Marion County market &mdash; no pressure, no obligation.</p>
+    <a class="btn" href="#contact">What's my home worth?</a>
+  </div>
+</section>
+
+<!-- ============ COMMUNITIES ============ -->
+<section class="communities" id="communities">
+  <div class="wrap">
+    <div class="eyebrow">Life in Ocala</div>
+    <h2 class="sec">Find the Community That Fits</h2>
+    <p class="lead">Ocala is more than the Horse Capital of the World&reg; &mdash; it's family neighborhoods, 55+ communities, historic districts, and wide-open acreage. Wherever you're headed next, Ashley knows the streets, the schools, and the market.</p>
+    <div class="comm-grid">
+      <a class="comm-card" href="#"><span>Family Neighborhoods</span></a>
+      <a class="comm-card" href="#"><span>55+ &amp; Golf Communities</span></a>
+      <a class="comm-card" href="#"><span>Historic Ocala</span></a>
+      <a class="comm-card" href="#"><span>Farms, Land &amp; Acreage</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section id="about" class="about">
+  <div class="wrap about-grid">
+    <div class="about-photo">Ashley's headshot goes here</div>
+    <div class="about-copy">
+      <div class="eyebrow">About Ashley</div>
+      <h2>Your move, handled with <em>care</em></h2>
+      <p>Buying or selling a home is one of the biggest decisions you'll make &mdash; and it shouldn't feel confusing or rushed. As an agent with Legacy Realty &amp; Associates, Ashley Luciano guides her clients through every step with clear communication, honest advice, and genuine care for the outcome.</p>
+      <p>From first showings to closing day, you'll always know where things stand and what comes next. That's the Legacy way.</p>
+      <a class="btn" href="#contact">Work With Ashley</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section>
+  <div class="wrap">
+    <div class="eyebrow">Client Reviews</div>
+    <h2 class="sec">What Clients Are Saying</h2>
+    <div class="quote-grid">
+      <div class="quote">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Placeholder review &mdash; swap in a real client testimonial. Two to four sentences about how Ashley guided the purchase or sale."</p>
+        <cite>&mdash; Client Name</cite>
+      </div>
+      <div class="quote">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Placeholder review &mdash; a first-time buyer story works well here to reinforce the 'walks you through it clearly' message."</p>
+        <cite>&mdash; Client Name</cite>
+      </div>
+      <div class="quote">
+        <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <p>"Placeholder review &mdash; ideally from a seller, mentioning communication and results."</p>
+        <cite>&mdash; Client Name</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT CTA ============ -->
+<section class="worth-band" id="contact">
+  <div class="wrap">
+    <h2>Let's talk about your next move</h2>
+    <p>Call or text anytime &mdash; Ashley responds the same day.</p>
+    <a class="btn" href="tel:3524846637">Call (352) 484-6637</a>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="foot-grid">
+    <div class="foot-brand">
+      <h4>Ashley Luciano</h4>
+      <p>Legacy Realty &amp; Associates. Real estate, done with care &mdash; serving Ocala and Marion County, Florida.</p>
+    </div>
+    <div>
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="#listings">Active Listings</a></li>
+        <li><a href="#worth">What's My Home Worth?</a></li>
+        <li><a href="#communities">Life in Ocala</a></li>
+        <li><a href="#about">About Ashley</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="tel:3524846637">(352) 484-6637</a></li>
+        <li>2403 SE 17th St STE 501</li>
+        <li>Ocala, FL 34471</li>
+      </ul>
+    </div>
+    <div class="newsletter">
+      <h4>Market Updates</h4>
+      <form action="#" method="post">
+        <input type="text" name="name" placeholder="Your name" aria-label="Name">
+        <input type="email" name="email" placeholder="Your email" aria-label="Email">
+        <button type="submit">Sign Up</button>
+      </form>
+    </div>
+  </div>
+  <div class="foot-legal">
+    Ashley Luciano &middot; Legacy Realty &amp; Associates &middot; 2403 SE 17th St STE 501, Ocala, FL 34471 &middot; (352) 484-6637<br>
+    &copy; 2026 All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>
